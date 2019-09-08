@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Leslie Yu</title>
+	<link rel="shortcut icon" href="E:\前端\LearnWeb\images\lufei.jpg">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<form name="input" action="./html_form_action.php" method="get">
+		Account: <input type="text" name="account"><br>
+		Password: <input type="password" name="password"><br>
+		First Name: <input type="text" name="firstname"><br>
+		Last Name: <input type="text" name="lastname"><br>
+		Age: <input type="text" name="age"><br>
+		Sexual: <input type="radio" name="sex" value="male">Male
+		<input type="radio" name="sex" value="female">Female<br>
+		<textarea rows="10" cols="20">我是一个文本区域</textarea><br >
+		<input type="submit" value="Submit">
+	</form>
+	<p><b>注意：</b> 表单本身是不可见的。并且注意一个文本字段的默认宽度是20个字符。</p>
+	
+	<form action="">
+		Account: <input type="text" name="account"><br>
+		Password: <input type="password" name="password">
+	</form>
+	<p><b>注意：</b> 密码字段中的字符是隐藏的(显示为星号或圆圈)。</p>
+	
+	<form>
+		<input type="checkbox" name="vehicle" value="Bike">I have a bike<br>
+		<input type="checkbox" name="vehicle" value="Car">I have a car 
+	</form>
+	
+	<form action="">
+		<select name="cars">
+		<option value="volvo">Volvo</option>
+		<option value="saab">Saab</option>
+		<option value="fiat" selected>Fiat</option>
+		<option value="audi">Audi</option>
+		</select>	
+	</form>
+
+	<form>
+		<input type="button" value="Hello World!">
+	</form>
+	
+	<form action="">
+		<fieldset style="width:300px">
+		<legend>Personal information:</legend>
+		Name: <input type="text" size="30"><br>
+		E-mail: <input type="text" size="30"><br>
+		Date of birth: <input type="text" size="10">
+		</fieldset>
+	</form>
+	
+	<h3>发送邮件到 someone@example.com:</h3>
+
+	<form action="MAILTO:someone@example.com" method="post" enctype="text/plain">
+		Name:<br>
+		<input type="text" name="name" value="your name"><br>
+		E-mail:<br>
+		<input type="text" name="mail" value="your email"><br>
+		Comment:<br>
+		<input type="text" name="comment" value="your comment" size="50"><br><br>
+		<input type="submit" value="发送">
+		<input type="reset" value="重置">
+	</form>
+	
+	<iframe src="demo_iframe.htm" name="iframe_a"></iframe>
+	<p><a href="http://www.baidu.com" target="iframe_a">BAIDU.COM</a></p>
+</body>
+</html>
