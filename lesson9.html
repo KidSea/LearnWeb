@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Leslie Yu</title>
+	<link rel="shortcut icon" href="E:\前端\LearnWeb\images\lufei.jpg">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<script>
+	document.write("Hello World!")
+	</script> 
+	
+	<noscript>抱歉，你的浏览器不支持 JavaScript!</noscript>
+	
+	<p>不支持 JavaScript 的浏览器会使用 &lt;noscript&gt; 元素中定义的内容（文本）来替代。</p>
+
+	
+	<script>
+	document.write("<h1>这是标题</h1><p>这是一个段落</p>")
+	</script>
+	
+	<h1>这是我的第一个JavaScript</h1>
+	<p id="demo">出现文字</p>
+	<script>
+	function myFunction1()
+	{
+		document.getElementById("demo").innerHTML="Hello JavaScript!";
+	}
+	</script>
+	<button type="button" onclick="myFunction1()">点我</button>
+	
+	<h1>我的第一段 JavaScript</h1>
+	<p id="demo2">
+	JavaScript 能改变 HTML 元素的样式。
+	</p>
+	<script>
+	function myFunction2()
+	{
+		x=document.getElementById("demo2") // 找到元素
+		x.style.color="#ff0000";          // 改变样式
+	}
+	</script>
+	<button type="button" onclick="myFunction2()">点击这里</button>
+</body>
+</html>
