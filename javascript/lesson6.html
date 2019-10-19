@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Leslie</title>
+</head>
+ 
+<body>
+<p> typeof 操作符返回变量或表达式的类型。</p>
+<p id="demo"></p>
+<script>
+var person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
+var person = null;
+var person = undefined;     // 值为 undefined, 类型为 undefined
+document.getElementById("demo").innerHTML = 
+	typeof "john" + "<br>" + 
+	typeof 3.14 + "<br>" +
+	typeof false + "<br>" +
+	typeof [1,2,3,4] + "<br>" +
+	typeof {name:'john', age:34} + "<br>" +
+	typeof "john" + "<br>" +
+    typeof 3.14 + "<br>" +
+    typeof NaN + "<br>" +
+    typeof false + "<br>" +
+    typeof [1,2,3,4] + "<br>" +
+    typeof {name:'john', age:34} + "<br>" +
+    typeof new Date() + "<br>" +
+    typeof function () {} + "<br>" +
+    typeof myCar + "<br>" +
+    typeof null + "<br>" + 
+	"john".constructor + "<br>" +
+    (3.14).constructor + "<br>" +
+    false.constructor + "<br>" +
+    [1,2,3,4].constructor + "<br>" +
+    {name:'john', age:34}.constructor + "<br>" +
+    new Date().constructor + "<br>" +
+    function () {}.constructor;
+	var txt="";
+	function message(){
+		try {
+			adddlert("Welcome guest!");
+		}
+		catch(err) {
+			txt="本页有一个错误。\n\n";
+			txt+="错误描述：" + err.message + "\n\n";
+			txt+="点击确定继续。\n\n";
+			alert(txt);
+		}
+	}
+function myFunction() {
+  var message, x;
+  message = document.getElementById("p01");
+  message.innerHTML = "";
+  x = document.getElementById("demo1").value;
+  try { 
+    if(x == "") throw "值是空的";
+    if(isNaN(x)) throw "值不是一个数字";
+    x = Number(x);
+    if(x > 10) throw "太大";
+    if(x < 5) throw "太小";
+  }
+  catch(err) {
+    message.innerHTML = "错误: " + err + ".";
+  }
+  finally {
+    document.getElementById("demo1").value = "";
+  }
+}
+</script>
+<input type="button" value="查看消息" onclick="message()" />
+<input id="demo1" type="text">
+<button type="button1" onclick="myFunction()">点我</button>
+<p id="p01"></p>
+
+</body>
+ 
+</html>
