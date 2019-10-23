@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Leslie</title>
+</head>
+
+<body>
+<p>设置参数的默认值。</p>
+<p id="demo"></p>
+
+<p>点击以下链接查看结果：</p>
+<a href="javascript:void(alert('Warning!!!'))">点我!</a><br>
+
+<p id="demo1"></p>
+</body>
+<script>
+var values = ["Volvo", "Saab", "Fiat"];
+
+var person = {
+    firstName: "John",
+    lastName: "Doe",
+    age: 50,
+    eyeColor: "blue"
+};
+function toCelsius(fahrenheit) {
+    return (5 / 9) * (fahrenheit - 32);
+}
+
+function myFunction(x, y) {
+    if (y === undefined) {
+        y = 0;
+    }    
+    return x * y;
+}
+document.getElementById("demo").innerHTML = myFunction(4);
+
+document.getElementById("demo1").innerHTML = add();
+// 内嵌函數
+function add() {
+	var counter = 0;
+    function plus() {counter += 1;}
+    plus();    
+    return counter; 
+}
+</script>
+ 
+</html>
