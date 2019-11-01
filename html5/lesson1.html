@@ -4,9 +4,48 @@
 <meta charset="utf-8">
 <title>Leslie</title>
 </head>
+<script>
+document.createElement("myHero")
+=
+</script>
+
+<style>
+myHero {
+    display: block;
+    background-color: #ddd;
+    padding: 50px;
+    font-size: 30px;
+}
+</style> 
  
 <body>
-文档内容......
+<video width="320" height="240" controls>
+  <source src="./../videos/president.mp4" type="video/mp4">
+  你的浏览器不支持 video 标签。
+</video>
+
+<h1>我的第一个标题</h1>
+ 
+<p>我的第一个段落。</p>
+ 
+<myHero>我的第一个新元素</myHero>
+
+<canvas id="myCanvas" width="200" height="100" style="border:1px solid #000000;">
+您的浏览器不支持 HTML5 canvas 标签。
+</canvas>
+<script>
+var c=document.getElementById("myCanvas");
+var ctx=c.getContext("2d");
+//ctx.fillStyle="#FF0000";
+//ctx.fillRect(0,0,150,75);
+ctx.moveTo(0,0);
+ctx.lineTo(200,100);
+ctx.beginPath();
+ctx.arc(95,50,40,0,2*Math.PI);
+ctx.stroke();
+ctx.font="30px Arial";
+ctx.fillText("Hello World",10,50);
+</script>
 </body>
  
 </html>
