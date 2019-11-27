@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Leslie</title>
+<style>
+<!-- id选择器 > 伪类选择器 > 类选择器 > 便签选择器 > 通用选择器 -->
+body {
+	color:#FFF;
+	background:#EDF5F9;
+	position:relative;
+}
+.box {
+	background:#2980B9;
+	position:absolute;
+	box-shadow:10px 10px 10px rgba(0,0,0,.5);
+}
+h1 {
+	width:120px;
+	height:120px;
+	background:#3498DB;
+	padding:20px;
+	margin:10px;
+	border:5px solid #FFF;
+	box-sizing:border-box;
+}
+.article {
+	text-shadow:0 8px 5px rgba(0, 0, 0, .5);
+}
+</style>
+</head>
+<body>
+	<div class="box">
+		<h1>box</h1>
+		<h1 class="article">article</h1>
+	</div>
+</body>
+ 
+</html>
