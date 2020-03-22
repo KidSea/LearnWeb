@@ -181,6 +181,27 @@ body{
 .hidden{
 	display:none;
 }
+h1 {
+	color:#fff;
+	font-size:60px;
+	text-align:center;
+}
+#name1{
+	opacity:0;
+	width:100%;
+	height:100px;
+}
+#name2{
+	opacity:0;
+	width:100%;
+	height:100px;
+}
+#name3{
+	opacity:0;
+	width:100%;
+	height:100px;
+}
+
 </style>
 </head>
  
@@ -197,7 +218,10 @@ body{
 </div>
 <!--交互界面-->
 <div id="scene2">
-	<div id="title4" class="slogan-text">请不断单击屏幕，发现你最爱的TA</div>
+	<div id="title4" class="slogan-text">单击屏幕，发现你最爱的TA</div>
+	<div id="name1"><h1>小</h1></div>
+	<div id="name2"><h1>晶</h1></div>
+	<div id="name3"><h1>子</h1></div>
 	<div id="lbtn" class="slogan-img">爱在华师大</div>
 </div>
 <!--结束界面-->
@@ -226,14 +250,17 @@ body{
 	var scene1 = document.getElementById("scene1");
 	var scene2 = document.getElementById("scene2");
 	var scene3 = document.getElementById("scene3");
-	var t0 = document.getElementById("t0");
-	var t1 = document.getElementById("t1");
-	var t2 = document.getElementById("t2");
-	var t3 = document.getElementById("t3");
-	var t4 = document.getElementById("t4");
-	var t5 = document.getElementById("t5");
-	var t6 = document.getElementById("t6");
-	var t7 = document.getElementById("t7");
+	var t0 = document.getElementById("title1");
+	var t1 = document.getElementById("title2");
+	var t2 = document.getElementById("title3");
+	var t3 = document.getElementById("title4");
+	var t4 = document.getElementById("title5");
+	var t5 = document.getElementById("title6");
+	var t6 = document.getElementById("title7");
+	var t7 = document.getElementById("title8");
+	var name1 = document.getElementById("name1");
+	var name2 = document.getElementById("name2");
+	var name3 = document.getElementById("name3");
 	var ercode = document.getElementById("ercode");
 	var heart = document.getElementById("heart");
 	var music = document.getElementById("music");
@@ -246,7 +273,7 @@ body{
 		}
 	);
 	function getPosition(ev) {
-		if(drawMode){ //只有在绘图模式下才开始绘制圆点
+		/**if(drawMode){ //只有在绘图模式下才开始绘制圆点
 			ev.preventDefault(); 
 			//为了使图案在水平方向上居中，计算出当前屏幕宽度与设计宽度（320像素）之间的差异值，以作为后续的位移基准值
 			var xbias = (window.innerWidth - 320)/2; 
@@ -276,6 +303,11 @@ body{
 				drawMode = false; //圆点全部显示完毕后，关闭绘图模式
 				TweenMax.to(lbtn, .8, {opacity:1, top:"80%"}); //显示结束按钮
 			}
+		}*/
+		if(drawMode) {
+			TweenMax.to(name1, 1, {top:"10%", opacity:1});
+			TweenMax.to(name2, 1, {top:"30%", opacity:1, delay:.5});
+			TweenMax.to(name3, 1, {top:"50%", opacity:1, delay:1});
 		}
 		return false;
 	}
@@ -297,9 +329,9 @@ body{
 	function showScene1(){
 		TweenMax.to(heart, 1, {opacity:1, delay:0});
 		TweenMax.to(heart, .5, {scaleX:1.2, scaleY:1.2, repeat:-1, yoyo:true});
-		TweenMax.to(title1, 1, {top:"40%", opacity:1});
-		TweenMax.to(title2, 1, {top:"57%", opacity:1, delay:.5});
-		TweenMax.to(title3, 1, {top:"65%", opacity:1, delay:1});
+		TweenMax.to(t0, 1, {top:"40%", opacity:1});
+		TweenMax.to(t1, 1, {top:"57%", opacity:1, delay:.5});
+		TweenMax.to(t2, 1, {top:"65%", opacity:1, delay:1});
 		TweenMax.to(sbtn, 1, {top:"75%", opacity:1, delay:1.4});
     }
 	function showScene2(){
