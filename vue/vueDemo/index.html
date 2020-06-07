@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="vue.js" type="text/jscript" charset="UTF-8"></script>
+	</head>
+	<body>
+		<div id="app">
+		   {{a}}
+		   </br>
+		   <span v-once>Message: {{ msg }}</span>
+		   <p>Using mustaches: {{ rawHtml }}</p>
+		   <p>Using v-html directive:<span v-html="rawHtml"></span></p>
+		</div>
+		
+		<div >
+		
+		<div id="app-2">
+		  <span v-bind:title="message">
+		    鼠标悬停几秒钟查看此处动态绑定的提示信息！
+		  </span>
+		  <p v-if="seen">现在你看到我了</p>
+		    <ul>
+		      <li v-for="todo in todos">
+		        {{ todo.text }}
+		      </li>
+		    </ul>
+		</div>
+		
+		<script type="text/jscript">
+	    var data = {a : 1, msg : "2222", rawHtml:'<span style="color:red;">This is red span</span>'};
+		var vm = new Vue({
+			el: '#app',
+			// data: {
+			// 	message: 'Hello World',
+			// },
+			data : data,
+			created: function () {
+			  // `this` 指向 vm 实例
+			  console.log('created')
+			}
+		});
+		var app2 = new Vue({
+		  el: '#app-2',
+		  data: {
+		    message: '页面加载于 ' + new Date().toLocaleString(),
+			seen : true,
+			todos : [
+				{text: "学习 js"},
+				{text: "学习 vue"},
+				{text: "整个牛项目"}
+			]
+		  }
+		})
+		vm.$watch('a', function(newVal, oldVal){
+			console.log(newVal, oldVal);
+		})
+		vm.$data.a = 'test..'
+		vm.$data.msg = "aaaaaa"
+		console.log(vm.a == data.a)
+		console.log(data.a)
+		</script>
+	</body>
+</html>
